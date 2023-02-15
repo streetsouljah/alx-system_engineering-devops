@@ -1,17 +1,18 @@
 #!/usr/bin/env bash
-#Print "Holberton School" 10 times w/ while loop, say bad luck on 4th turn,
-#good luck on 7th
+# 4 bad luck, 8 is your chance
 
-i="0"
-while ((i < 10)); do
-    if [ $i == 3 ]; then
-	echo "bad luck"
+i=1
 
-    elif [ $i == 7 ]; then
-	echo "good luck"
-    else
-        echo "Holberton School"
-    fi
+while [ "$i" -lt 11 ]; do
 
-    i=$((i + 1))
+  # if 4 bad luck elif 8 good luck
+  if [ "$i" -eq 4 ]; then
+    echo "bad luck"
+  elif [ "$i" -eq 8 ]; then
+    echo "good luck"
+  else
+    echo "Best School"
+  fi
+
+  ((i++))
 done
